@@ -1,0 +1,148 @@
+body{
+  background-color: rgb(19, 19, 10);
+  color: white;
+  overflow: hidden;
+}
+
+h1{
+  text-align: center;
+}
+
+.markIcon{
+  color: greenyellow;
+  box-shadow: 1px 1px 0px;
+}
+
+
+.todo-wrapper{
+  background: black;
+  padding: 2%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0px 5px 10px black;
+
+}
+
+.todo-input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px soild gray;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+ 
+.todo-input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-item label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input{
+  padding: 8px;
+  border: none; 
+  width: 250px;
+}
+
+.todo-input-item input:focus{
+  outline-color: rgb(8,230,122);
+}
+
+.primarybtn{
+  background-color: rgb(0,230,122);
+  color: beige;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  margin-top: 25px;
+  padding: 10px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.primarybtn:hover{
+  background-color: rgb(0, 160, 85);
+}
+
+.secondarybtn{
+  background-color: rgb(171, 173, 172);
+  color: beige;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  margin-top: 25px;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.active{
+  background-color: rgb(0,230,122);
+}
+
+.btn-area{
+  margin-bottom: 15px;
+}
+
+.todo-list-area{
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list-item{
+  background-color: rgb(61, 59, 59);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(85, 170, 85);
+}
+
+.todo-list-item h3{
+  font-size: 25px;
+  color: rgb(0,230,122);
+
+}
+
+.todo-list-item p{
+  font-size: 14px;
+  color: beige;
+  margin-top: 0px;
+}
+
+.deleteIcon{
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.deleteIcon :hover{
+  color: red;
+}
+
+.checkIcon{
+  font-size: 35px;
+  margin-left: 10px;
+  color: beige;
+  cursor: pointer;
+}
+
+.checkIcon :hover{
+  color: rgb(8, 194, 8);
+}
