@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="create-thought content">
+        <form>
+            <label for="title">thought title:</label>
+            <input type="text" id="title" required>
+            <label for="snippet">thought snippet:</label>
+            <input type="text" id="snippet" required>
+            <label for="body">thought body:</label>
+            <textarea id="body" required></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

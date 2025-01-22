@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  
+  <body>
+  <%- include('./partials/nav.ejs') %>
+
+    <div class="thought content">
+        <h2>All thoughts</h2>
+         <% if (thoughts.length > 0) { %>
+          <% thoughts.forEach(thoughts => { %>
+
+            <h3 class="title"> <%= thoughts.title %> </h3>
+            <p class="snippet"> <%= thoughts.snippet %>  </p>
+
+         <% }) %>
+         <% }else{ %>
+            <p>there are no thoughts to display...</p>
+        <% } %>
+    </div>
+   
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
