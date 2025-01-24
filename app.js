@@ -1,17 +1,31 @@
+require("dotenv").config();
 const express = require('express')
 const morgan = require('morgan')
+const mongoose = require('mongoose')
 
 const app = express()
+
+
+
+
+mongoose.connect(process.env.mongourl)
+.then((connect)=> console.log('DB connected'))
+.catch((err) => console.log(`error connecting to DB ${err}`))
+
+
+    app.listen(3000, () =>{
+        console.log('listenig on http://localhost:3000') 
+    })
+ 
+
 
 app.set('view engine', 'ejs')
 
 
-app.listen(3000)
-console.log('listenig on localhost:3000')
-
+app.use(express.static('public'))
 app.use(morgan('dev'))
 
-app.use(express.static('public'))
+
 
  
 
