@@ -30,32 +30,8 @@ app.use(express.static('public'))
 app.use(morgan('dev'))
 
 
-app.get('/add-thought', (req, res) =>{
-    const thought = new Thought({
-        title: 'new thought',
-        snippet: 'if pigs could fly',
-        body: 'pigs flying would make man what to fly it'
-    })
-    thought.save()
-    .then((result) => {
-        res.send(result)
-    })
-    .catch((err) =>{
-        console.log(err)
-    })
-})
- 
-
-
 app.get('/', (req, res) =>{
-    const thoughts = [
-        {title: "Tommy lost keys", snippet: 'Lorem ipsum, dolor sit '},
-        {title: "Lost treasure", snippet: 'Lorem ipsum, dolor sit '},
-        {title: "Game boy", snippet: 'story of a game fan, who created his own game '}
-    ]
-    // res.send('<p>home page</p>')
-    // res.sendFile('./views/index.html', {root: __dirname})
-    res.render('index', {title: 'Home', thoughts})
+    res.render('index', {title: 'Home'})
 })
 app.get('/about', (req, res) =>{
     // res.send('<p>sererior</p>')
@@ -65,6 +41,14 @@ app.get('/about', (req, res) =>{
 app.get('/about-us', (req, res) =>{
     // res.send('<p>home page</p>')
     res.redirect('about')
+})
+
+app.get('/thoughts', (req, res) =>{
+   Thought.find().sort({createdAt: -1})
+   .then((result)=>{
+    res.render('thoughts', {title: 'pigs', thoughts: result})
+   })
+   .catch((err) => console.log(err))
 })
 
 app.get('/thoughts/create', (req, res) =>{

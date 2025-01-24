@@ -5,19 +5,7 @@
   <body>
   <%- include('./partials/nav.ejs') %>
 
-    <div class="thought content">
-        <h2>All thoughts</h2>
-         <% if (thoughts.length > 0) { %>
-          <% thoughts.forEach(thoughts => { %>
-
-            <h3 class="title"> <%= thoughts.title %> </h3>
-            <p class="snippet"> <%= thoughts.snippet %>  </p>
-
-         <% }) %>
-         <% }else{ %>
-            <p>there are no thoughts to display...</p>
-        <% } %>
-    </div>
+  <p>when you have a somthing to say why not trust in us to give <span>the chance to do it</span></p>
    
     <%- include('./partials/footer.ejs') %>
 </body>
