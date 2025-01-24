@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const Thought = require('./models/thought');
+const { result } = require("lodash");
 
 const app = express()
 
@@ -9,14 +11,16 @@ const app = express()
 
 
 mongoose.connect(process.env.mongourl)
-.then((connect)=> console.log('DB connected'))
+.then((connect)=> {
+    app.listen(3000, () =>{
+            console.log('listenig on http://localhost:3000') 
+        })
+    
+})
 .catch((err) => console.log(`error connecting to DB ${err}`))
 
 
-    app.listen(3000, () =>{
-        console.log('listenig on http://localhost:3000') 
-    })
- 
+    
 
 
 app.set('view engine', 'ejs')
@@ -26,7 +30,20 @@ app.use(express.static('public'))
 app.use(morgan('dev'))
 
 
-
+app.get('/add-thought', (req, res) =>{
+    const thought = new Thought({
+        title: 'new thought',
+        snippet: 'if pigs could fly',
+        body: 'pigs flying would make man what to fly it'
+    })
+    thought.save()
+    .then((result) => {
+        res.send(result)
+    })
+    .catch((err) =>{
+        console.log(err)
+    })
+})
  
 
 
