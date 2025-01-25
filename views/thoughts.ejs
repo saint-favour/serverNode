@@ -9,10 +9,10 @@
         <h2>All thoughts</h2>
          <% if (thoughts.length > 0) { %>
           <% thoughts.forEach(thoughts => { %>
-
+            <a class="single" href="/thoughts/<%= thoughts._id %>">
             <h3 class="title"> <%= thoughts.title %> </h3>
             <p class="snippet"> <%= thoughts.snippet %>  </p>
-
+            </a>
          <% }) %>
          <% }else{ %>
             <p>there are no thoughts to display...</p>

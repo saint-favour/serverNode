@@ -59,8 +59,34 @@ h3{
 }
 
 /* index styles */
+.thought a{
+  display: block;
+  margin: 40px 0px;
+  padding-left: 30px;
+  border-left: 8px solid crimson;
+}
+
+.thought a:hover h3{
+  color: crimson;
+}
 
 /* details styles */
+.detials{
+  position: relative;
+}
+
+.delete{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.delete:hover{
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgb(0, 0, 0,0.2);
+  }
 
 /* create styles */
 .create-thought form{
