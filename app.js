@@ -27,6 +27,7 @@ app.set('view engine', 'ejs')
 
 
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
 app.use(morgan('dev'))
 
 
@@ -49,6 +50,16 @@ app.get('/myThoughts', (req, res) =>{
     res.render('thoughts', {title: 'myThoughts', thoughts: result})
    })
    .catch((err) => console.log(err))
+})
+
+app.post('/myThoughts', (req, res) => {
+    const thought = new Thought(req.body )
+
+    thought.save()
+    .then((result) =>{
+        res.redirect('/myThoughts')
+    })
+    .catch((err)=> console.log(err))
 })
 
 app.get('/thoughts/create', (req, res) =>{
