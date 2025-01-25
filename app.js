@@ -43,10 +43,10 @@ app.get('/about-us', (req, res) =>{
     res.redirect('about')
 })
 
-app.get('/thoughts', (req, res) =>{
+app.get('/myThoughts', (req, res) =>{
    Thought.find().sort({createdAt: -1})
    .then((result)=>{
-    res.render('thoughts', {title: 'pigs', thoughts: result})
+    res.render('thoughts', {title: 'myThoughts', thoughts: result})
    })
    .catch((err) => console.log(err))
 })
